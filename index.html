@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <main>
+        <meta charset="UTF-8">
+        <title>Rocks, Papers, Scissors </title> 
+    </main>
+    <body>
+        <script>
+            function playRound(playerSelection, computerSelection){
+                if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
+                    console.log('You win!');
+                } else if ((playerSelection === 'rock') && (computerSelection === 'paper')) {
+                    console.log('You lose');
+                } else if ((playerSelection === 'rock') && (computerSelection === 'rock')) {
+                    console.log('Tie!');
+                } else if ((playerSelection === 'paper') && (computerSelection === 'scissors')) {
+                    console.log('You lose');
+                } else if ((playerSelection === 'paper') && (computerSelection === 'paper')) {
+                    console.log('Tie!');
+                } else if ((playerSelection === 'paper') && (computerSelection === 'rock')) {
+                    console.log('You win!');
+                } else if ((playerSelection === 'scissors') && (computerSelection === 'scissors')) {
+                    console.log('Tie!');
+                } else if ((playerSelection === 'scissors') && (computerSelection === 'paper')) {
+                    console.log('You win!');
+                } else if ((playerSelection === 'scissors') && (computerSelection === 'rock')) {
+                    console.log('You lose');
+                } else {
+                    console.log('Invalid Selection')
+                }
+            }
+
+            const computerSelection = getComputerChoice();
+            function getComputerChoice() {
+                let randomNumber = (Math.floor(Math.random) * 3);
+                if ((randomNumber < 1) && (randomNumber >= 0)) {
+                    getComputerChoice === 'rock';
+                } else if ((randomNumber < 2) && (randomNumber >= 1)) {
+                    getComputerChoice === 'paper';
+                } else {
+                    getComputerChoice === 'scissors'
+                }
+            }
+
+            const playerSelection === 'rock';
+/* Rocks paper scissors:
+    getComputerChoice will be a function that finds a random number between 0 and 3
+        if 1>number>=0, then computerSelection is Rock
+        if 2>number>=1, then the computerSelection is Paper
+        if 3>number>=2, then the computerSelection is Scissors
+    userSelection will be a function where browswer will ask user to type in rock, paper, or scisssor
+        all values will be converted to lowercase
+    playRound will be a function where computerSelection is tested against userSelection
+        if computerSelection = "rock" and playerSelection = "rock", console.log('Tie!')
+        if computerSelection = "rock" and playerSelection = "paper", console.log('You Win!')
+        if computerSelection = "rock" and playerSelection = "scissors", console.log('You Lose!')
+        if computerSelection = "paper" and playerSelection = "rock", console.log('You Win!')
+        if computerSelection = "paper" and playerSelection = "paper", console.log('Tie!')
+        if computerSelection = "paper" and playerSelection = "scissors", console.log('You Win!')
+        if computerSelection = "scissors" and playerSelection = "rock", console.log('You Lose!')
+        if computerSelection = "scissors" and playerSelection = "paper", console.log('you Win!')
+        if computerSelection = "scissors" and playerSelection = "scissors", console.log('Tie!')
+*/
+
+        </script>
+    </body>
+</html>
