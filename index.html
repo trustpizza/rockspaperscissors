@@ -21,6 +21,8 @@
                     return("scissors");
                 } 
             }
+            // Starts the first 5-round game
+            game(); 
 
             // Determine the winner of the round
             function playRound(playerSelection, computerSelection) {
@@ -52,25 +54,49 @@
                 console.log("It's a Tie!");
                 roundsPlayed++;
             } else {
-                console.log("Invalid Selection")
+                // If Invalid Selection -> replays the round until Valid Selection
+                alert("Invalid Selection: Press OK to try again");
+                let promptAnswer = prompt("Rock, Paper or Scissors?")
+                let playerSelection = promptAnswer.toLowerCase();
+                let computerSelection = computerPlay();
+                return playRound(playerSelection, computerSelection);
+
             }
             }
 
             // play 5 rounds
-            for (let i = 0; i < 5; i++) {
-                let promptAnswer = prompt("Rock, Paper or Scissors?");
-                let playerSelection = promptAnswer.toLowerCase();
-                let computerSelection = computerPlay();
-                console.log(playRound(playerSelection, computerSelection))
-                if ((playerScore > computerScore) && (roundsPlayed == 5)) {
-                    alert(`You Won! The score was ${playerScore} to ${computerScore}`)
-                } else if (playerScore < computerScore && (roundsPlayed == 5)) {
-                    alert(`You Lost! The score was ${computerScore} to ${playerScore}`)
-                } else  if (playerScore == computerScore && (roundsPlayed == 5)) {
-                    alert("It's a Tie!")
+            function game() {
+                for (let i = 0; i < 5; i++) {
+                    let promptAnswer = prompt("Rock, Paper or Scissors?");
+                    let playerSelection = promptAnswer.toLowerCase();
+                    let computerSelection = computerPlay();
+                    console.log(playRound(playerSelection, computerSelection));
+                    if ((playerScore > computerScore) && (roundsPlayed == 5)) {
+                        alert(`You Won! The score was ${playerScore} to ${computerScore}`);
+                        replay(); 
+                    } else if (playerScore < computerScore && (roundsPlayed == 5)) {
+                        alert(`You Lost! The score was ${computerScore} to ${playerScore}`);
+                        replay(); 
+                    } else  if (playerScore == computerScore && (roundsPlayed == 5)) {
+                        alert("It's a Tie!");
+                        replay();  
+                    } 
+                                    
                 }
             }
-
+            // Replay function
+            function replay() {
+                let replayQuestion = prompt("Would you like to play again?");
+            let replayAnswer = replayQuestion.toLowerCase();
+            if (replayAnswer === "yes") {
+                roundsPlayed = 0;
+                playerScore = 0;
+                computerScore = 0;
+                game();
+            } else  {
+                alert("Thanks for playing!");
+            }
+            }
         </script>
     </body>
 </html>
