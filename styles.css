@@ -1,0 +1,15 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+
+.button {
+    font-size: 20pt;
+}
