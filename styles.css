@@ -2,14 +2,46 @@ h1 {
     display: flex;
     justify-content: center;
 }
-
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .content {
     display: flex;
     justify-content: space-evenly;
     padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 
 .button {
     font-size: 20pt;
+}
+
+.results {
+    height: 200px;
+    width: 300px;
+    border: solid black;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.scoreboard {
+    height: 100px;
+    width: 150px;
+    border: solid black;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
